@@ -270,10 +270,6 @@ function get20s(array) {
 }
 
 
-console.log("result below");
-console.log(get20s(artists));
-
-
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use removeArtist to do the following:
 1. Receive an array
@@ -283,8 +279,11 @@ Use removeArtist to do the following:
 
 For example, if removeArtist is invoked with the artists array and the number 0, it will remove Amedeo Modigliani from our dataset and return the number 19. */
 
-function removeArtist(/*Your Code Here*/) {
-  /*Your Code Here*/
+function removeArtist(array, idx) {
+
+  array.splice(idx, 1);
+  return array.length;
+
 }
 
 
@@ -304,9 +303,23 @@ Use addArtist to do the following:
 
 Example: addArtist(artists) should return the artists array with the above object added to the end of the array. */
 
-function addArtist(/*Your Code Here*/) {
-  /*Your Code Here*/
+function addArtist(array) {
+
+  array.push(
+    {
+    id: 20,
+    name: "Hamza Sajid",
+    years: "1998 - 2021",
+    genre: "Web Design", 
+    nationality: "American",
+    bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean feugiat purus lorem, vitae tincidunt velit maximus eu. Cras commodo nulla pharetra lorem scelerisque consequat sit amet in dolor. Pellentesque placerat dignissim cursus. Pellentesque aliquet elementum augue, in gravida felis faucibus at. In hac habitasse platea dictumst." 
+    }
+  )
+  
+  return array;
+
 }
+
 
 
 
@@ -317,8 +330,21 @@ Use lotsOfArt to do the following:
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]*/
 
-function lotsOfArt(/*Your Code Here*/) {
-  /*Your Code Here*/
+function lotsOfArt(array) {
+  let resultArr = [];
+
+  for (let i=0; i < array.length; i++){
+
+    if (array[i].paintings >= 100) {
+      resultArr.push(array[i].name);
+  
+    }
+  }
+
+  return resultArr;
+
+
+
 }
 
 
